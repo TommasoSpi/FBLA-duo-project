@@ -2,5 +2,5 @@ This project is for FBLA
 
 Things to DO
 
-- Creste GITHUB account
+- Create GITHUB account
 - Start working 
