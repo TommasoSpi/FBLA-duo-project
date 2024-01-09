@@ -7,16 +7,19 @@ Develop a program that will help improve student involvement at your school.  Th
 Things to DO
 
 - Create GITHUB account
-- Start working 
+- Start working
+- get good sleep 
 - Finish outline
+       - plan out app ( 5 pages min)
+       - general idea of each page
+       - direction to go in
+       - 
 
 Desicions
 
 - Python language
 - due date 26th
-- 
-
-
+  
 Checklist
 
 - Assign a point value for participating in or attending events.
