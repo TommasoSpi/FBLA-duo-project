@@ -8,7 +8,7 @@ Things to DO
 
 - Create GITHUB account
 - Start working 
-
+- Finish outline
 
 Desicions
 
