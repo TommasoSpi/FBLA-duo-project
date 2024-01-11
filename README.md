@@ -9,7 +9,7 @@ Things to DO
 - Create GITHUB account
 - Start working
 - get good sleep 
-- Finish outline
+- Finish outline (DONE)
        - plan out app ( 5 pages min)
        - general idea of each page
        - direction to go in
@@ -19,6 +19,8 @@ Desicions
 
 - Python language
 - due date 26th
+- be able to write simple program by friday
+- Jordan lend book to Tommaso (Forever)
   
 Checklist
 
