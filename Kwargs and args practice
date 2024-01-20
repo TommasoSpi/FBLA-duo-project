@@ -1,0 +1,15 @@
+def total_fruits(**fruits):
+    total = 0
+    for amount in fruits.values():
+        total += amount 
+    return total
+
+print (total_fruits(banana=5, mango=5, apple=10))
+
+def add(*numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+print (add(2,17,81))
