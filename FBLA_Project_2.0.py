@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk, messagebox
+import customtkinter
 
 #create the parent window
 root = tk.Tk()
@@ -32,7 +33,10 @@ tabControl.pack(expand=1, fill="both")
 # creates what is inside of each tab 
 
 # tab1
-Label(tab1,text="Hello", font=("arial","25")).grid(column=20,row=20,padx=250,pady=0)
+Label(tab1,text="↑ Welcome to the Edison Attendence Tracker!", font=("arial","20")).grid(column=1,row=1,padx=5,pady=0)
+Label(tab1, text="↑ Click on the above tabs to explore our program!", font=("arial","10")).grid(column=1,row=2,padx=5,pady=5)
+Label(tab1, text="", font=("arial","10")).grid(column=1,row=3,padx=5,pady=5)
+
 # tab2
 def writetofile():
     userEntryList = [ivn1.get(), ivn2.get(), ivn3.get(), ivn4.get(), str(choice_1.get() + choice_2.get() + choice_3.get() + choice_4.get() + choice_5.get() + choice_6.get() + choice_7.get() + choice_8.get() + choice_9.get() + choice_10.get())]
@@ -134,12 +138,45 @@ if (userEntry_2 == None):
     messagebox.showinfo("Attention !!!!!!!",'Incorrect Entry')
 
 # tab3
-ttk.Label(tab3,text="").grid(column=0,row=0,padx=5,pady=5)
+    #athletic
+Label(tab3,text="Football: 100pts", font=("arial","10")).grid(column=5,row=1,padx=5,pady=5)
+Label(tab3,text="Basketball: 200pts", font=("arial","10")).grid(column=5,row=2,padx=5,pady=5)
+Label(tab3,text="Volleyball: 300pts", font=("arial","10")).grid(column=5,row=3,padx=5,pady=5)
+Label(tab3,text="Soccer: 400pts", font=("arial","10")).grid(column=5,row=4,padx=5,pady=5)
+Label(tab3,text="Lacrosse: 500pts", font=("arial","10")).grid(column=5,row=5,padx=5,pady=5)
+    #Academic
+Label(tab3,text="Homecoming: 100pts", font=("arial","10")).grid(column=6,row=1,padx=5,pady=5)
+Label(tab3,text="Prom: 200pts", font=("arial","10")).grid(column=6,row=2,padx=5,pady=5)
+Label(tab3,text="Theater play: 300pts", font=("arial","10")).grid(column=6,row=3,padx=5,pady=5)
+Label(tab3,text="Concert: 400pts", font=("arial","10")).grid(column=6,row=4,padx=5,pady=5)
+Label(tab3,text="International Night: 500pts", font=("arial","10")).grid(column=6,row=5,padx=5,pady=5)
 # tab4
-ttk.Label(tab4,text="Welcome to Prizes").grid(column=0,row=0,padx=5,pady=5)
-# tab5
-ttk.Label(tab5,text="Welcome to FAQ").grid(column=0,row=0,padx=5,pady=5)
+Label(tab4,text="School Prizes!",font=("arial","15")).grid(column=0,row=0,padx=5,pady=5)
+Label(tab4,text="Eraser: 200pts",borderwidth=1, relief="solid").grid(column=0,row=1,padx=5,pady=5)
+Label(tab4,text="Pencil: 200pts",borderwidth=1, relief="solid").grid(column=0,row=2,padx=5,pady=5)
+Label(tab4,text="Pencil pouch: 600pts",borderwidth=1, relief="solid").grid(column=0,row=3,padx=5,pady=5)
+Label(tab4,text="Homework pass: 1000pts",borderwidth=1, relief="solid").grid(column=0,row=4,padx=5,pady=5)
 
+Label(tab4,text="Food Prizes",font=("arial","15")).grid(column=1,row=0,padx=5,pady=5)
+Label(tab4,text="Happy meal: 200pts",borderwidth=1, relief="solid").grid(column=1,row=1,padx=5,pady=5)
+Label(tab4,text="Burger: 400pts",borderwidth=1, relief="solid").grid(column=1,row=2,padx=5,pady=5)
+Label(tab4,text="Pizza: 600pts",borderwidth=1, relief="solid").grid(column=1,row=3,padx=5,pady=5)
+Label(tab4,text="Cake: 1000pts",borderwidth=1, relief="solid").grid(column=1,row=4,padx=5,pady=5)
+
+Label(tab4,text="School Sprit Prizes",font=("arial","15")).grid(column=2,row=0,padx=5,pady=5)
+Label(tab4,text="Pencil: 200pts",borderwidth=1, relief="solid").grid(column=2,row=1,padx=5,pady=5)
+Label(tab4,text="T-shirt: 400pts",borderwidth=1, relief="solid").grid(column=2,row=2,padx=5,pady=5)
+Label(tab4,text="Lanyard: 600pts",borderwidth=1, relief="solid").grid(column=2,row=3,padx=5,pady=5)
+Label(tab4,text="Hoodie: 1000pts",borderwidth=1, relief="solid").grid(column=2,row=4,padx=5,pady=5)
+# tab5
+Label(tab5,text="Q: Where can I redeem my prizes?",font=("arial","15")).grid(column=0,row=0,padx=2,pady=2)
+Label(tab5,text="A: The front desk.",font=("arial","15")).grid(column=0,row=1,padx=2,pady=2)
+Label(tab5,text="",font=("arial","15")).grid(column=0,row=2,padx=2,pady=2)
+Label(tab5,text="Q: How can I redeem my points?",font=("arial","15")).grid(column=0,row=3,padx=2,pady=2)
+Label(tab5,text="A: Signing up for the event automatically redeems your points.",font=("arial","15")).grid(column=0,row=4,padx=2,pady=2)
+Label(tab5,text="",font=("arial","15")).grid(column=0,row=5,padx=2,pady=2)
+Label(tab5,text="Q: Why is your program so boring?",font=("arial","15")).grid(column=0,row=6,padx=2,pady=2)
+Label(tab5,text="A: Because we wanted to go for a minimalist look",font=("arial","15")).grid(column=0,row=7,padx=2,pady=2)
 # store info into text file
 def mstore(text):
     with open("file.txt","a") as file: #w for write a for append
