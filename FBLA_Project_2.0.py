@@ -32,11 +32,10 @@ tabControl.pack(expand=1, fill="both")
 # creates what is inside of each tab 
 
 # tab1
-ttk.Label(tab1,text="Welcome to Home").grid(column=0,row=0,padx=5,pady=5)
-
+Label(tab1,text="Hello", font=("arial","25")).grid(column=20,row=20,padx=250,pady=0)
 # tab2
 def writetofile():
-    userEntryList = [ivn1.get(), ivn2.get(), ivn3.get(), ivn4.get()]
+    userEntryList = [ivn1.get(), ivn2.get(), ivn3.get(), ivn4.get(), str(choice_1.get() + choice_2.get() + choice_3.get() + choice_4.get() + choice_5.get() + choice_6.get() + choice_7.get() + choice_8.get() + choice_9.get() + choice_10.get())]
 
     print("\n".join(userEntryList))
     with open("file.txt","a") as f:
@@ -50,6 +49,9 @@ ttk.Label(tab2,text="Last Name").grid(column=0,row=1,padx=5,pady=5)
 ttk.Label(tab2,text="Student ID").grid(column=0,row=2,padx=5,pady=5)
 
 ttk.Label(tab2,text="Grade Level").grid(column=0,row=3,padx=5,pady=5)
+
+ttk.Label(tab2,text="Sports").grid(column=0,row=4,padx=5,pady=5)
+ttk.Label(tab2,text="Academics").grid(column=1,row=4,padx=5,pady=5)
 ## enter command to store info somewhere
 #userEntryList = []
 ivn1 = StringVar()
@@ -73,10 +75,58 @@ ivn4.set(gradeLevel[0])
 userEntry_4 = OptionMenu(tab2, ivn4, *gradeLevel)
 userEntry_4.grid(column=1,row=3,padx=10,pady=0)
 
+choice_1 = tk.IntVar()
+choice_2 = tk.IntVar()
+choice_3 = tk.IntVar()
+choice_4 = tk.IntVar()
+choice_5 = tk.IntVar()
+choice_6 = tk.IntVar()
+choice_7 = tk.IntVar()
+choice_8 = tk.IntVar()
+choice_9 = tk.IntVar()
+choice_10 = tk.IntVar()
+
+
+# Sports Events
+Event_1 = tk.Checkbutton(tab2, text='Football',variable=choice_1, onvalue=100, offvalue=0)
+Event_1.grid(column=0,row=5,padx=5,pady=0)
+
+Event_2 = tk.Checkbutton(tab2, text='Basketball',variable=choice_2, onvalue=200, offvalue=0)
+Event_2.grid(column=0,row=6,padx=5,pady=0)
+
+Event_3 = tk.Checkbutton(tab2, text='Volleyball',variable=choice_3, onvalue=300, offvalue=0)
+Event_3.grid(column=0,row=7,padx=5,pady=0)
+
+Event_4 = tk.Checkbutton(tab2, text='Soccer',variable=choice_4, onvalue=400, offvalue=0)
+Event_4.grid(column=0,row=8,padx=5,pady=0)
+
+Event_5 = tk.Checkbutton(tab2, text='Lacrosse',variable=choice_5, onvalue=500, offvalue=0)
+Event_5.grid(column=0,row=9,padx=5,pady=0)
+
+# Academic Events
+Event_6 = tk.Checkbutton(tab2, text='Homecoming',variable=choice_6, onvalue=100, offvalue=0)
+Event_6.grid(column=1,row=5,padx=5,pady=0)
+
+Event_7 = tk.Checkbutton(tab2, text='Prom',variable=choice_7, onvalue=200, offvalue=0)
+Event_7.grid(column=1,row=6,padx=5,pady=0)
+
+Event_8 = tk.Checkbutton(tab2, text='Theater Play',variable=choice_8, onvalue=300, offvalue=0)
+Event_8.grid(column=1,row=7,padx=5,pady=0)
+
+Event_9 = tk.Checkbutton(tab2, text='Concert',variable=choice_9, onvalue=400, offvalue=0)
+Event_9.grid(column=1,row=8,padx=5,pady=0)
+
+Event_10 = tk.Checkbutton(tab2, text='International night',variable=choice_10, onvalue=500, offvalue=0)
+Event_10.grid(column=1,row=9,padx=5,pady=0)
+
+#choice_Total = tk.StringVar()
+Total = choice_1.get() + choice_2.get() + choice_3.get() + choice_4.get() + choice_5.get() + choice_6.get() + choice_7.get() + choice_8.get() + choice_9.get() + choice_10.get()
+#choice_Total = tk.StringVar(value = Total)
+
 
 #mSave = Button (tab2,text="save",bg="white", command = lambda:mstore(userEntryList)).grid(column=1,row=3,padx=10,pady=0)
 mSave = Button (tab2,text="save", command = writetofile)
-mSave.grid(column=1,row=4,padx=10,pady=0)
+mSave.grid(column=1,row=10,padx=10,pady=0)
 ## error command for when no info is submitted == messagebox.showinfo("Attention !!!!!!!",'Incorrect Entry')
 if (userEntry_1 == None):
     messagebox.showinfo("Attention !!!!!!!",'Incorrect Entry')
@@ -84,7 +134,7 @@ if (userEntry_2 == None):
     messagebox.showinfo("Attention !!!!!!!",'Incorrect Entry')
 
 # tab3
-ttk.Label(tab3,text="Welcome to Events").grid(column=0,row=0,padx=5,pady=5)
+ttk.Label(tab3,text="").grid(column=0,row=0,padx=5,pady=5)
 # tab4
 ttk.Label(tab4,text="Welcome to Prizes").grid(column=0,row=0,padx=5,pady=5)
 # tab5
@@ -109,7 +159,29 @@ def msearch():
     print(open_file.read())
     open_file.close()
 
+#with open('file.txt') as input_file:
+#    textList = []
+#    for line in input_file:
+#        line = line.strip()
+#        textList.append(line)
 
+def drawgrid():
+    with open('file.txt') as input_file:
+        textList = []
+        for line in input_file:
+            line = line.strip()
+            textList.append(line)
+    
+    height = int(len(textList)/5) 
+    width = 5
+    for i in range(height): #Rows
+        for j in range(width): #Columns
+            b = Label(tab3, text=textList[5*i+j])
+            b.grid(row=i, column=j)
+
+mRefresh = Button (tab3,text="Refresh", command = drawgrid)
+mRefresh.grid(column=1,row=10,padx=10,pady=0)
+     
 # makes program run
 
 root.mainloop()
